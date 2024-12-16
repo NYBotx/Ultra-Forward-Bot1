@@ -1,169 +1,155 @@
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
-
 import os
 from config import Config
 
 class Translation(object):
-  START_TXT = """<b>ʜɪ {}
+  START_TXT = """<b>ʜᴇʏ ᴅᴇᴀʀ ɢʀᴀɴᴅᴄʜɪʟᴅ {}
 
-ɪ'ᴍ ᴀ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀᴜᴛᴏ ꜰᴏʀᴡᴀʀᴅ ʙᴏᴛ
-ɪ ᴄᴀɴ ꜰᴏʀᴡᴀʀᴅ ᴀʟʟ ᴍᴇssᴀɢᴇ ꜰʀᴏᴍ ᴏɴᴇ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴀɴᴏᴛʜᴇʀ ᴄʜᴀɴɴᴇʟ
+ɪ'ᴍ ʏᴏᴜʀ ᴛʀᴜsᴛᴇᴅ ᴏʟᴅ ɢʀᴀɴᴅᴘᴀ's ᴍᴇssᴀɢᴇ ꜰᴏʀᴡᴀʀᴅᴇʀ 👴
+ʟᴇᴛ ᴍᴇ ʜᴇʟᴘ ʏᴏᴜ sʜᴀʀᴇ ᴍᴇssᴀɢᴇs ʟɪᴋᴇ ɪ sʜᴀʀᴇ ʟɪꜰᴇ ᴡɪsᴅᴏᴍ
 
-ᴄʟɪᴄᴋ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ ᴍᴇ</b>"""
+ᴄʟɪᴄᴋ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ꜰᴏʀ ɢʀᴀɴᴅᴘᴀ's ᴛɪᴘs 🤓</b>"""
 
+  DONATE_TXT = """<b><i>ɪꜰ ʏᴏᴜ ʟᴏᴠᴇ ʏᴏᴜʀ ɢʀᴀɴᴅᴘᴀ's ʜᴇʟᴘ 👴❤️. ᴄᴏɴsɪᴅᴇʀ ʙᴜʏɪɴɢ ʜɪᴍ ᴀ ᴄᴜᴘ ᴏꜰ ᴄᴏꜰꜰᴇᴇ ☕
 
-  DONATE_TXT = """<b><i>If you liked me ❤️. consider make a donation to support my developer 👦
+ᴜᴘɪ ɪᴅ - </i></b><code>pay-to-grandpa-wisdom@coffee</code>"""
 
-UPI ID - </i></b><code>pay-to-yash-singh@fam</code>"""
+  HELP_TXT = """<b><u>🧓 ɢʀᴀɴᴅᴘᴀ's ᴡɪsᴅᴏᴍ ʜᴇʟᴘ</b></u>
 
-  HELP_TXT = """<b><u>🔆 ʜᴇʟᴘ</b></u>
+<u>**📖 ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:**</u>
 
-<u>**📚 Available Commands:**</u>
+<b>⏣ __/start - ᴄʜᴇᴄᴋ ɪꜰ ɢʀᴀɴᴅᴘᴀ ɪs ʜᴇʀᴇ__ 
+⏣ __/forward - sʜᴀʀᴇ ᴍᴇssᴀɢᴇs ʟɪᴋᴇ ᴀ ᴡɪsᴇ ᴍᴀɴ__
+⏣ __/unequify - ᴄʟᴇᴀɴ ᴜᴘ ᴅᴜᴘʟɪᴄᴀᴛᴇ ᴛᴀʟᴇs__
+⏣ __/settings - ᴄᴏɴꜰɪɢᴜʀᴇ ʏᴏᴜʀ ᴡɪsᴅᴏᴍ__
+⏣ __/reset - ʀᴇsᴇᴛ ʏᴏᴜʀ ʟᴇᴀʀɴɪɴɢs__
+⏣ __/donate - ꜱᴜᴘᴘᴏʀᴛ ᴏʟᴅ ᴀɢᴇ__
+⏣ __/stop - ᴘᴀᴜsᴇ ᴛʜᴇ ᴡɪsᴅᴏᴍ ꜱʜᴀʀɪɴɢ__</b>
 
-<b>⏣ __/start - Check I'm alive__ 
-⏣ __/forward - Forward messages__
-⏣ __/unequify - Delete duplicate messages in channels__
-⏣ __/settings - Configure your settings__
-⏣ __/reset - Reset your settings__
-⏣ __/donate - Donate to developer__
-⏣ __/stop - Cancel your ongoing forwarding__</b>
-
-<b><u>💢 Features:</b></u>
-<b>► __Forward message from public channel to your channel without admin permission. if the channel is private need admin permission__
-► __Forward message from private channel to your channel by using userbot(user must be member in there)__
-► __Custom caption__
-► __Custom button__
-► __Support restricted chats__
-► __Skip duplicate messages__
-► __Filter type of messages__
-► __Skip messages based on extensions & keywords & size__</b>
+<b><u>💡 ɢʀᴀɴᴅᴘᴀ's ᴍᴀɢɪᴄ:</b></u>
+<b>► __sʜᴀʀᴇ ᴍᴇssᴀɢᴇs ꜰʀᴏᴍ ᴄʜᴀɴɴᴇʟs ᴡɪᴛʜ ᴇᴀsᴇ__
+► __ɴᴏ ᴄᴏᴍᴘʟɪᴄᴀᴛᴇᴅ ᴀᴅᴍɪɴ ᴘᴇʀᴍɪssɪᴏɴs__
+► __ᴀᴅᴅ ᴄᴜsᴛᴏᴍ ʟᴏᴠᴇ ɴᴏᴛᴇs (ᴄᴀᴘᴛɪᴏɴs)__
+► __ᴄʀᴇᴀᴛᴇ ꜱᴡᴇᴇᴛ ʙᴜᴛᴛᴏɴs__
+► __sᴜᴘᴘᴏʀᴛ ᴀʟʟ ᴄʜᴀᴛ ᴛʏᴘᴇs__
+► __sᴋɪᴘ ʀᴇᴘᴇᴀᴛᴇᴅ ᴛᴀʟᴇs__
+► __ꜰɪʟᴛᴇʀ ᴡɪsᴅᴏᴍ ᴛʏᴘᴇs__
+► __sᴋɪᴘ ᴜɴɴᴇᴄᴇssᴀʀʏ ᴛᴀʟᴇs__</b>
 """
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz
-  
-  HOW_USE_TXT = """<b><u>⚠️ Before Forwarding:</b></u>
-<b>► __add a bot or userbot__
-► __add atleast one to channel__ `(your bot/userbot must be admin in there)`
-► __You can add chats or bots by using /settings__
-► __if the **From Channel** is private your userbot must be member in there or your bot must need admin permission in there also__
-► __Then use /forward to forward messages__</b>"""
 
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
-  
+  HOW_USE_TXT = """<b><u>⚠️ ʙᴇꜰᴏʀᴇ sʜᴀʀɪɴɢ ᴡɪsᴅᴏᴍ:</b></u>
+<b>► __ᴀᴅᴅ ᴀ ʙᴏᴛ ᴏʀ ʜᴇʟᴘᴇʀ__
+► __ᴀᴅᴅ ᴀᴛ ʟᴇᴀsᴛ ᴏɴᴇ ᴄʜᴀɴɴᴇʟ__ `(ʏᴏᴜʀ ʙᴏᴛ ᴍᴜsᴛ ʙᴇ ᴀ ᴄʜᴀᴛ ᴡɪᴢᴀʀᴅ)`
+► __ʏᴏᴜ ᴄᴀɴ ᴀᴅᴅ ᴄʜᴀᴛs ʙʏ ᴜsɪɴɢ /settings__
+► __ɪꜰ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ ɪs ᴘʀɪᴠᴀᴛᴇ, ʏᴏᴜʀ ʜᴇʟᴘᴇʀ ᴍᴜsᴛ ʙᴇ ᴀ ᴍᴇᴍʙᴇʀ__
+► __ᴛʜᴇɴ ᴜsᴇ /forward ᴛᴏ sʜᴀʀᴇ ᴡɪsᴅᴏᴍ__</b>"""
+
   ABOUT_TXT = """<b>
-╔════❰ ғᴏʀᴡᴀʀᴅ ʙᴏᴛ ❱═❍⊱❁
+╔════❰ ɢʀᴀɴᴅᴘᴀ's ᴍᴇssᴀɢᴇ ꜱʜᴀʀᴇʀ ❱═❍⊱❁
 ║╭━━━━━━━━━━━━━━━➣
-║┣⪼📃ʙᴏᴛ : ғᴏʀᴡᴀʀᴅ ʙᴏᴛ
-║┣⪼👦ᴄʀᴇᴀᴛᴏʀ : sɪʟɪᴄᴏɴ ᴅᴇᴠᴇʟᴏᴘᴇʀ
-║┣⪼📡ʜᴏsᴛᴇᴅ ᴏɴ : ʜᴇʀᴏᴋᴜ
-║┣⪼🗣️ʟᴀɴɢᴜᴀɢᴇ : ᴘʏᴛʜᴏɴ3
-║┣⪼📚ʟɪʙʀᴀʀʏ : ᴘʏʀᴏɢʀᴀᴍ
-║┣⪼🗒️ᴠᴇʀsɪᴏɴ : 1.0.6
+║┣⪼📜 ʙᴏᴛ : ᴡɪsᴅᴏᴍ ꜱʜᴀʀᴇʀ
+║┣⪼👴 ᴄʀᴇᴀᴛᴏʀ : ᴡɪsᴇ ɢʀᴀɴᴅᴘᴀ
+║┣⪼💻 ʜᴏsᴛᴇᴅ ᴏɴ : ᴄʟᴏᴜᴅ ᴏꜰ ᴇxᴘᴇʀɪᴇɴᴄᴇ
+║┣⪼🧠 ʟᴀɴɢᴜᴀɢᴇ : ᴘʏᴛʜᴏɴ ᴏꜰ ᴡɪsᴅᴏᴍ
+║┣⪼📚 ʟɪʙʀᴀʀʏ : ᴘʏʀᴏɢʀᴀᴍ ᴏꜰ ᴄᴏɴɴᴇᴄᴛɪᴏɴ
+║┣⪼🕰️ ᴠᴇʀsɪᴏɴ : 1.0.6 (ᴀɢᴇᴅ ᴡɪsᴇʟʏ)
 ║╰━━━━━━━━━━━━━━━➣
 ╚══════════════════❍⊱❁</b>"""
 
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
-  
   STATUS_TXT = """<b>
-╔════❰ ʙᴏᴛ sᴛᴀᴛᴜs  ❱═❍⊱❁
+╔════❰ ɢʀᴀɴᴅᴘᴀ's ʙᴏᴛ sᴛᴏʀʏ  ❱═❍⊱❁
 ║╭━━━━━━━━━━━━━━━➣
-║┣⪼👱 ᴛᴏᴛᴀʟ  ᴜsᴇʀs : <code>{}</code>
+║┣⪼👥 ᴛᴏᴛᴀʟ ᴡɪsᴇ ꜰᴏʟʟᴏᴡᴇʀs : <code>{}</code>
 ║┃
-║┣⪼🤖 ᴛᴏᴛᴀʟ ʙᴏᴛ : <code>{}</code>
+║┣⪼🤖 ᴍᴇssᴀɢᴇ ᴡɪᴢᴀʀᴅs : <code>{}</code>
 ║┃
-║┣⪼🔃 ғᴏʀᴡᴀʀᴅɪɴɢs : <code>{}</code>
+║┣⪼🔁 ᴡɪsᴅᴏᴍ sʜᴀʀᴇᴅ : <code>{}</code>
 ║┃
-║┣⪼🔍 ᴜɴᴇǫᴜɪꜰʏɪɴɢs: <code>0</code>
+║┣⪼🔍 ᴄʟᴇᴀɴᴇᴅ ᴅᴜᴘʟɪᴄᴀᴛᴇs: <code>0</code>
 ║╰━━━━━━━━━━━━━━━➣
 ╚══════════════════❍⊱❁</b>""" 
 
   SERVER_TXT = """<b>
-╔════❰ sᴇʀᴠᴇʀ sᴛᴀᴛs  ❱═❍⊱❁۪۪
+╔════❰ ɢʀᴀɴᴅᴘᴀ's sᴇʀᴠᴇʀ ʜᴇᴀʟᴛʜ  ❱═❍⊱❁۪۪
 ║╭━━━━━━━━━━━━━━━➣
-║┣⪼ ᴛᴏᴛᴀʟ ᴅɪsᴋ sᴘᴀᴄᴇ: <code>38 GB</code>
+║┣⪼ ᴛᴏᴛᴀʟ ᴍᴇᴍᴏʀʏ: <code>38 GB</code>
 ║┣⪼ ᴜsᴇᴅ: <code>1.54 GB</code>
 ║┣⪼ ꜰʀᴇᴇ: <code>36.46 GB</code>
-║┣⪼ ᴄᴘᴜ: <code>{}%</code>
-║┣⪼ ʀᴀᴍ: <code>{}%</code>
+║┣⪼ ʙʀᴀɪɴ ᴘᴏᴡᴇʀ: <code>{}%</code>
+║┣⪼ ᴍᴇᴍᴏʀʏ ʀᴇᴄᴀʟʟ: <code>{}%</code>
 ║╰━━━━━━━━━━━━━━━➣
 ╚══════════════════❍⊱❁۪۪</b>"""
   
-  FROM_MSG = "<b>❪ SET SOURCE CHAT ❫\n\nForward the last message or last message link of source chat.\n/cancel - cancel this process</b>"
+  FROM_MSG = "<b>❪ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴡɪsᴅᴏᴍ sᴏᴜʀᴄᴇ ❫\n\nꜰᴏʀᴡᴀʀᴅ ᴛʜᴇ ʟᴀsᴛ ᴍᴇssᴀɢᴇ ᴏʀ ᴍᴇssᴀɢᴇ ʟɪɴᴋ.\n/cancel - sᴛᴏᴘ ᴛʜɪs ᴛᴀʟᴇ</b>"
 
-  TO_MSG = "<b>❪ CHOOSE TARGET CHAT ❫\n\nChoose your target chat from the given buttons.\n/cancel - Cancel this process</b>"
+  # (Previous code continues...)
 
-  SKIP_MSG = "<b><u>sᴇᴛ ɴᴏ. ᴏғ ᴍᴇssᴀɢᴇs ᴛᴏ sᴋɪᴘ 📃</u></b>\n\n<b>You can skip a certain number of messages and forward the rest.\n\nDefault Skip Number = 0</b>\n\n<b><i>Example: If you enter 0, no messages will be skipped.\nIf you enter 5, the first 5 messages will be skipped.</i></b>\n/cancel <b>- cancel this process</b>"
+  TO_MSG = "<b>❪ ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴡɪsᴅᴏᴍ ᴅᴇsᴛɪɴᴀᴛɪᴏɴ ❫\n\nᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴛᴀʀɢᴇᴛ ᴄʜᴀᴛ ꜰʀᴏᴍ ᴛʜᴇ ʙᴜᴛᴛᴏɴs.\n/cancel - sᴛᴏᴘ ᴛʜɪs ᴡɪsᴅᴏᴍ ᴛʀᴀɴsꜰᴇʀ</b>"
 
-  CANCEL = "<b>Process Cancelled Succefully !</b>"
+  SKIP_MSG = """<b><u>sᴇᴛ ɴᴜᴍʙᴇʀ ᴏꜰ ᴛᴀʟᴇs ᴛᴏ sᴋɪᴘ 📖</u></b>
 
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
+<b>ʏᴏᴜ ᴄᴀɴ sᴋɪᴘ ᴄᴇʀᴛᴀɪɴ ᴍᴇssᴀɢᴇs ʟɪᴋᴇ sᴋɪᴘᴘɪɴɢ ᴜɴɪɴᴛᴇʀᴇsᴛɪɴɢ sᴛᴏʀɪᴇs.
 
-  BOT_DETAILS = "<b><u>📄 BOT DETAILS</b></u>\n\n<b>➣ NAME:</b> <code>{}</code>\n<b>➣ BOT ID:</b> <code>{}</code>\n<b>➣ USERNAME:</b> @{}"
+ᴅᴇꜰᴀᴜʟᴛ sᴋɪᴘ ɴᴜᴍʙᴇʀ = 0</b>
 
-  USER_DETAILS = "<b><u>📄 USERBOT DETAILS</b></u>\n\n<b>➣ NAME:</b> <code>{}</code>\n<b>➣ USER ID:</b> <code>{}</code>\n<b>➣ USERNAME:</b> @{}"  
+<b><i>ᴇxᴀᴍᴘʟᴇ: ɪꜰ ʏᴏᴜ ᴇɴᴛᴇʀ 0, ɴᴏ ᴛᴀʟᴇs ᴡɪʟʟ ʙᴇ sᴋɪᴘᴘᴇᴅ.
+ɪꜰ ʏᴏᴜ ᴇɴᴛᴇʀ 5, ᴛʜᴇ ꜰɪʀsᴛ 5 ᴛᴀʟᴇs ᴡɪʟʟ ʙᴇ sᴋɪᴘᴘᴇᴅ.</i></b>
+
+/cancel <b>- sᴛᴏᴘ ᴛʜɪs ᴡɪsᴅᴏᴍ ᴛʀᴀɴsꜰᴇʀ</b>"""
+
+  CANCEL = "<b>ɢʀᴀɴᴅᴘᴀ's ᴡɪsᴅᴏᴍ ᴛʀᴀɴsꜰᴇʀ sᴛᴏᴘᴘᴇᴅ!</b>"
+
+  BOT_DETAILS = "<b><u>📜 ʙᴏᴛ ᴅᴇᴛᴀɪʟs</b></u>\n\n<b>➣ ɴᴀᴍᴇ:</b> <code>{}</code>\n<b>➣ ʙᴏᴛ ɪᴅ:</b> <code>{}</code>\n<b>➣ ᴜsᴇʀɴᴀᴍᴇ:</b> @{}"
+
+  USER_DETAILS = "<b><u>📜 ʜᴇʟᴘᴇʀ ʙᴏᴛ ᴅᴇᴛᴀɪʟs</b></u>\n\n<b>➣ ɴᴀᴍᴇ:</b> <code>{}</code>\n<b>➣ ᴜsᴇʀ ɪᴅ:</b> <code>{}</code>\n<b>➣ ᴜsᴇʀɴᴀᴍᴇ:</b> @{}"
          
-  TEXT = """<b>╔════❰ ғᴏʀᴡᴀʀᴅ sᴛᴀᴛᴜs  ❱═❍⊱❁
+  TEXT = """<b>╔════❰ ᴡɪsᴅᴏᴍ sʜᴀʀɪɴɢ sᴛᴀᴛᴜs ❱═❍⊱❁
 ║╭━━━━━━━━━━━━━━━➣
-║┣⪼<b>𖨠 ᴛᴏᴛᴀʟ ᴍᴇssᴀɢᴇs: </b> <code>{}</code>
+║┣⪼<b>𖨠 ᴛᴏᴛᴀʟ ᴛᴀʟᴇs: </b> <code>{}</code>
 ║┃
-║┣⪼<b>𖨠 ғᴇᴄʜᴇᴅ ᴍᴇssᴀɢᴇs: </b> <code>{}</code>
+║┣⪼<b>𖨠 ꜰᴇᴛᴄʜᴇᴅ ᴛᴀʟᴇs: </b> <code>{}</code>
 ║┃
-║┣⪼<b>𖨠 ғᴏʀᴡᴀʀᴅᴇᴅ ᴍᴇssᴀɢᴇs: </b> <code>{}</code>
+║┣⪼<b>𖨠 sʜᴀʀᴇᴅ ᴛᴀʟᴇs: </b> <code>{}</code>
 ║┃
-║┣⪼<b>𖨠 ᴅᴜᴘʟɪᴄᴀᴛᴇ ᴍᴇssᴀɢᴇs: </b> <code>{}</code>
+║┣⪼<b>𖨠 ᴅᴜᴘʟɪᴄᴀᴛᴇ ᴛᴀʟᴇs: </b> <code>{}</code>
 ║┃
-║┣⪼<b>𖨠 ᴅᴇʟᴇᴛᴇᴅ ᴍᴇssᴀɢᴇs: </b> <code>{}</code>
+║┣⪼<b>𖨠 ᴅᴇʟᴇᴛᴇᴅ ᴛᴀʟᴇs: </b> <code>{}</code>
 ║┃
-║┣⪼<b>𖨠 sᴋɪᴘᴘᴇᴅ ᴍᴇssᴀɢᴇs: </b> <code>{}</code>
+║┣⪼<b>𖨠 sᴋɪᴘᴘᴇᴅ ᴛᴀʟᴇs: </b> <code>{}</code>
 ║┃
-║┣⪼<b>𖨠 ғɪʟᴛᴇʀᴇᴅ ᴍᴇssᴀɢᴇs: </b> <code>{}</code>
+║┣⪼<b>𖨠 ꜰɪʟᴛᴇʀᴇᴅ ᴛᴀʟᴇs: </b> <code>{}</code>
 ║┃
 ║┣⪼<b>𖨠 ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛᴜs: </b> <code>{}</code>
 ║┃
-║┣⪼<b>𖨠 ᴘᴇʀᴄᴇɴᴛᴀɢᴇ: </b> <code>{}</code>%
+║┣⪼<b>𖨠 ᴘʀᴏɢʀᴇss: </b> <code>{}</code>%
 ║╰━━━━━━━━━━━━━━━➣ 
 ╚════❰ <b>{}</b> ❱══❍⊱❁"""
 
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
   DUPLICATE_TEXT = """
-╔════❰ ᴜɴᴇǫᴜɪғʏ sᴛᴀᴛᴜs ❱═❍⊱❁۪۪
+╔════❰ ᴄʟᴇᴀɴɪɴɢ ʟɪꜰᴇ's ʀᴇᴘᴇᴛɪᴛɪᴏɴs ❱═❍⊱❁۪۪
 ║╭━━━━━━━━━━━━━━━➣
-║┣⪼ <b>ғᴇᴛᴄʜᴇᴅ ғɪʟᴇs:</b> <code>{}</code>
+║┣⪼ <b>ꜰᴇᴛᴄʜᴇᴅ ᴛᴀʟᴇs:</b> <code>{}</code>
 ║┃
-║┣⪼ <b>ᴅᴜᴘʟɪᴄᴀᴛᴇ ᴅᴇʟᴇᴛᴇᴅ:</b> <code>{}</code> 
+║┣⪼ <b>ʀᴇᴘᴇᴀᴛᴇᴅ ᴛᴀʟᴇs ʀᴇᴍᴏᴠᴇᴅ:</b> <code>{}</code> 
 ║╰━━━━━━━━━━━━━━━➣
 ╚════❰ {} ❱══❍⊱❁۪۪
 """
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
-  DOUBLE_CHECK = """<b><u>ᴅᴏᴜʙʟᴇ ᴄʜᴇᴄᴋɪɴɢ 📋</b></u>
 
-<b>ʙᴇꜰᴏʀᴇ ꜰᴏʀᴡᴀʀᴅɪɴɢ ᴛʜᴇ ᴍᴇssᴀɢᴇs ᴄʟɪᴄᴋ ᴛʜᴇ ʏᴇs ʙᴜᴛᴛᴏɴ ᴏɴʟʏ ᴀꜰᴛᴇʀ ᴄʜᴇᴄᴋɪɴɢ ᴛʜᴇ ꜰᴏʟʟᴏᴡɪɴɢ</b>
+  DOUBLE_CHECK = """<b><u>ᴅᴏᴜʙʟᴇ-ᴄʜᴇᴄᴋɪɴɢ ᴡɪsᴅᴏᴍ 📜</b></u>
 
+<b>ʙᴇꜰᴏʀᴇ sʜᴀʀɪɴɢ ᴛᴀʟᴇs, ᴄʟɪᴄᴋ ᴛʜᴇ ʏᴇs ʙᴜᴛᴛᴏɴ ᴀꜰᴛᴇʀ ᴄᴀʀᴇꜰᴜʟ ʀᴇᴠɪᴇᴡ</b>
 
-<b>★ ʏᴏᴜʀ ʙᴏᴛ: {botname}</b>
-<b>★ sᴏᴜʀᴄᴇ ᴄʜᴀᴛ: {from_chat}</b>
-<b>★ ᴛᴀʀɢᴇᴛ ᴄʜᴀᴛ: {to_chat}</b>
-<b>★ sᴋɪᴘ ᴍᴇssᴀɢᴇs: {skip}</b>
+<b>★ ʏᴏᴜʀ ᴡɪsᴅᴏᴍ sʜᴀʀᴇʀ: {botname}</b>
+<b>★ ᴡɪsᴅᴏᴍ sᴏᴜʀᴄᴇ: {from_chat}</b>
+<b>★ ᴡɪsᴅᴏᴍ ᴅᴇsᴛɪɴᴀᴛɪᴏɴ: {to_chat}</b>
+<b>★ sᴋɪᴘ ᴛᴀʟᴇs: {skip}</b>
 
-<i><b>° {botname} ᴍᴜsᴛ ʙᴇ ᴀᴅᴍɪɴ ɪɴ ᴛᴀʀɢᴇᴛ ᴄʜᴀᴛ</i> ({to_chat})</b>
-<i><b>° ɪꜰ ᴛʜᴇ sᴏᴜʀᴄᴇ ᴄʜᴀᴛ ɪs ᴘʀɪᴠᴀᴛᴇ ʏᴏᴜʀ ᴜsᴇʀʙᴏᴛ ᴍᴜsᴛ ʙᴇ ᴍᴇᴍʙᴇʀ ᴏʀ ʏᴏᴜʀ ʙᴏᴛ ᴍᴜsᴛ ʙᴇ ᴀᴅᴍɪɴ ɪɴ ᴛʜᴇʀᴇ ᴀʟsᴏ</b></i>
+<i><b>° {botname} ᴍᴜsᴛ ʙᴇ ᴀ ᴡɪsᴇ ᴡɪᴢᴀʀᴅ ɪɴ ᴛᴀʀɢᴇᴛ ᴄʜᴀᴛ</i> ({to_chat})</b>
+<i><b>° ɪꜰ ᴛʜᴇ sᴏᴜʀᴄᴇ ɪs ᴀ ᴘʀɪᴠᴀᴛᴇ ʀᴇᴀʟᴍ, ʏᴏᴜʀ ʜᴇʟᴘᴇʀ ᴍᴜsᴛ ʙᴇ ᴀ ᴍᴇᴍʙᴇʀ</b></i>
 
-<b>ɪꜰ ᴛʜᴇ ᴀʙᴏᴠᴇ ɪs ᴄʜᴇᴄᴋᴇᴅ ᴛʜᴇɴ ᴛʜᴇ ʏᴇs ʙᴜᴛᴛᴏɴ ᴄᴀɴ ʙᴇ ᴄʟɪᴄᴋᴇᴅ</b>"""
+<b>ɪꜰ ᴇᴠᴇʀʏᴛʜɪɴɢ ʟᴏᴏᴋs ᴡɪsᴇ, ᴛʜᴇɴ ᴄʟɪᴄᴋ ʏᴇs</b>"""
 
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
+# Update channel and contact information
+UPDATE_CHANNEL = "https://t.me/Grandpa_Wisdom_Botz"
+SUPPORT_GROUP = "https://t.me/Grandpa_Support_Circle"
+DEVELOPER = "@WiseGrandpaCode"
+GITHUB = "https://github.com/grandpa-tech-wisdom# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
