@@ -11,18 +11,16 @@ from translation import Translation
 from pyrogram import Client, filters, enums, __version__ as pyrogram_version
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaDocument
 
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
-
+# Grandpa's Wise Buttons 👴
 main_buttons = [[
-        InlineKeyboardButton('❗️ʜᴇʟᴘ', callback_data='help')
+        InlineKeyboardButton('🧐 ʜᴇʟᴘ, ᴍʏ ᴅᴇᴀʀ', callback_data='help')
         ],[
-        InlineKeyboardButton('📜 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/Silicon_Botz'),
-        InlineKeyboardButton('📢 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/Silicon_Bot_Update')
+        InlineKeyboardButton('👴 ɢʀᴀɴᴅᴘᴀ\'s ᴄᴏᴍᴍᴜɴɪᴛʏ', url='https://t.me/Silicon_Botz'),
+        InlineKeyboardButton('📰 ɴᴇᴡs ʙᴏᴀʀᴅ', url='https://t.me/Silicon_Bot_Update')
         ],[
-        InlineKeyboardButton('💳 ᴅᴏɴᴀᴛᴇ', callback_data='donate')
+        InlineKeyboardButton('💰 sᴜᴘᴘᴏʀᴛ ᴍʏ ᴄᴀʀᴇɢɪᴠᴇʀ', callback_data='donate')
         ]]
+
 #===================Start Function===================#
 
 @Client.on_message(filters.private & filters.command(['start']))
@@ -34,18 +32,18 @@ async def start(client, message):
             if member.status == "kicked":
                 await client.send_message(
                     chat_id=message.chat.id,
-                    text="You are banned from using this bot.",
+                    text="🚫 Oh dear, you've been barred from my little digital world! Must have been some misunderstanding...",
                 )
                 return
         except:
             # Send a message asking the user to join the channel
             join_button = [
-                [InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=f"{Config.FORCE_SUB_CHANNEL}")],
-                [InlineKeyboardButton("↻ ᴛʀʏ ᴀɢᴀɪɴ", url=f"https://t.me/{client.username}?start=start")]
+                [InlineKeyboardButton("🤝 ᴊᴏɪɴ ᴍʏ ᴄɪʀᴄʟᴇ", url=f"{Config.FORCE_SUB_CHANNEL}")],
+                [InlineKeyboardButton("↻ ʟᴇᴛ ᴍᴇ ᴛʀʏ ᴀɢᴀɪɴ", url=f"https://t.me/{client.username}?start=start")]
             ]
             await client.send_message(
                 chat_id=message.chat.id,
-                text="ᴘʟᴇᴀsᴇ ᴊᴏɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ.",
+                text="🧓 Now listen here, young one. You'll need to join our cozy little channel before we can chat!",
                 reply_markup=InlineKeyboardMarkup(join_button)
             )
             return
@@ -54,27 +52,24 @@ async def start(client, message):
         await db.add_user(user.id, message.from_user.mention)
         await client.send_message(
             chat_id=Config.LOG_CHANNEL,
-            text=f"#NewUser\n\nIᴅ - {user.id}\nNᴀᴍᴇ - {message.from_user.mention}"
+            text=f"#NewVisitor\n\nA fresh face has wandered into my digital parlor!\nIᴅ - {user.id}\nNᴀᴍᴇ - {message.from_user.mention}"
         )
     reply_markup = InlineKeyboardMarkup(main_buttons)
     await client.send_message(
         chat_id=message.chat.id,
         reply_markup=InlineKeyboardMarkup(main_buttons),
-        text=Translation.START_TXT.format(message.from_user.first_name))
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
+        text=f"Well, hello there, {message.from_user.first_name}! 👴 Let this old-timer help you navigate this newfangled technology. What can I do for you today?"
+    )
 
 #==================Restart Function==================#
 
 @Client.on_message(filters.private & filters.command(['restart']) & filters.user(Config.BOT_OWNER_ID))
 async def restart(client, message):
     msg = await message.reply_text(
-        text="<i>ᴛʀʏɪɴɢ ᴛᴏ ʀᴇsᴛᴀʀᴛ...</i>"
+        text="🕰️ Let me dust off my gears and restart... Give an old man a moment!"
     )
     await asyncio.sleep(5)
-    await msg.edit("<i>sᴇʀᴠᴇʀ ʀᴇsᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ ✅</i>")
+    await msg.edit("✅ Phew! All systems back to working order. These young machines, always needing a little tune-up!")
     os.execl(sys.executable, sys.executable, *sys.argv)
     
 #==================Callback Functions==================#
@@ -82,28 +77,24 @@ async def restart(client, message):
 @Client.on_callback_query(filters.regex(r'^help'))
 async def helpcb(bot, query):
     await query.message.edit_text(
-        text=Translation.HELP_TXT,
+        text="🧓 Oh, you need some guidance! Here's how this old brain can assist you, young one...",
         reply_markup=InlineKeyboardMarkup(
             [[
-            InlineKeyboardButton('• ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ ❓', callback_data='how_to_use')
+            InlineKeyboardButton('• ʜᴏᴡ ᴅᴏᴇs ᴛʜɪs ᴄᴏɴᴛʀᴀᴘᴛɪᴏɴ ᴡᴏʀᴋ? ❓', callback_data='how_to_use')
             ],[
-            InlineKeyboardButton('• sᴇᴛᴛɪɴɢs ', callback_data='settings#main'),
-            InlineKeyboardButton('• sᴛᴀᴛᴜs ', callback_data='status')
+            InlineKeyboardButton('• ᴍʏ ᴄʟᴜᴛᴛᴇʀᴇᴅ sᴇᴛᴛɪɴɢs ', callback_data='settings#main'),
+            InlineKeyboardButton('• ᴍʏ ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛᴜs ', callback_data='status')
             ],[
-            InlineKeyboardButton('• ʙᴀᴄᴋ', callback_data='back'),
-            InlineKeyboardButton('• ᴀʙᴏᴜᴛ', callback_data='about')
+            InlineKeyboardButton('• ɢᴏ ʙᴀᴄᴋ', callback_data='back'),
+            InlineKeyboardButton('• ᴀʙᴏᴜᴛ ᴍᴇ', callback_data='about')
             ]]
         ))
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 @Client.on_callback_query(filters.regex(r'^how_to_use'))
 async def how_to_use(bot, query):
     await query.message.edit_text(
-        text=Translation.HOW_USE_TXT,
-             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('• ʙᴀᴄᴋ', callback_data='help')]]),
+        text="🤓 Let me explain this contraption, just like I used to explain things to my grandkids...",
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('• ʙᴀᴄᴋ ᴛᴏ sᴀғᴇᴛʏ', callback_data='help')]]),
         disable_web_page_preview=True
     )
 
@@ -112,31 +103,22 @@ async def back(bot, query):
     reply_markup = InlineKeyboardMarkup(main_buttons)
     await query.message.edit_text(
        reply_markup=reply_markup,
-       text=Translation.START_TXT.format(
-                query.from_user.first_name))
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
+       text=f"Back to my digital living room, {query.from_user.first_name}! 👴")
 
 @Client.on_callback_query(filters.regex(r'^about'))
 async def about(bot, query):
     await query.message.edit_text(
-        text=Translation.ABOUT_TXT,
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('• ʙᴀᴄᴋ', callback_data='back')]]),
+        text="🕯️ A little story about this old bot... Sit down and let me tell you!",
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('• ʙᴀᴄᴋ ʜᴏᴍᴇ', callback_data='back')]]),
         disable_web_page_preview=True,
         parse_mode=enums.ParseMode.HTML,
     )
-    
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 @Client.on_callback_query(filters.regex(r'^donate'))
 async def donate(bot, query):
     await query.message.edit_text(
-        text=Translation.DONATE_TXT,
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('• ʙᴀᴄᴋ', callback_data='back')]]),
+        text="💸 Ah, thinking of supporting an old man's digital adventures? How kind of you!",
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('• ʙᴀᴄᴋ ʜᴏᴍᴇ', callback_data='back')]]),
         disable_web_page_preview=True,
         parse_mode=enums.ParseMode.HTML,
     )
@@ -165,13 +147,6 @@ def format_uptime():
     uptime_str = ', '.join(uptime_components)
     return uptime_str
 
-    uptime_str = f"{int(days)} days, {int(hours)} hours, {int(minutes)} minutes, {int(seconds)} seconds"
-    return uptime_str
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
-
 @Client.on_callback_query(filters.regex(r'^status'))
 async def status(bot, query):
     users_count, bots_count = await db.total_users_bots_count()
@@ -181,17 +156,17 @@ async def status(bot, query):
     uptime_str = format_uptime()
 
     await query.message.edit_text(
-        text=Translation.STATUS_TXT.format(users_count, bots_count, temp.forwardings, total_channels),
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('• ʙᴀᴄᴋ', callback_data='help'),
-             InlineKeyboardButton('• sᴇʀᴠᴇʀ sᴛᴀᴛs', callback_data='server_status')
-]]),
+        text="🧓 Let me tell you about my digital journey...\n\n" + 
+             f"Total visitors to my digital porch: {users_count} 👥\n" +
+             f"Mechanical helpers: {bots_count} 🤖\n" +
+             f"Channels I'm keeping an eye on: {total_channels} 📺",
+        reply_markup=InlineKeyboardMarkup([[
+            InlineKeyboardButton('• ʙᴀᴄᴋ ʜᴏᴍᴇ', callback_data='help'),
+            InlineKeyboardButton('• sᴇʀᴠᴇʀ ʜᴇᴀʟᴛʜ', callback_data='server_status')
+        ]]),
         parse_mode=enums.ParseMode.HTML,
         disable_web_page_preview=True,
     )
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 @Client.on_callback_query(filters.regex(r'^server_status'))
 async def server_status(bot, query):
@@ -199,20 +174,20 @@ async def server_status(bot, query):
     cpu = psutil.cpu_percent()
 
     await query.message.edit_text(
-        text=Translation.SERVER_TXT.format(cpu, ram),
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('• ʙᴀᴄᴋ', callback_data='status')]]),
+        text=f"🩺 My digital health report:\n\n" +
+             f"Brain activity (CPU): {cpu}% 🧠\n" +
+             f"Energy levels (RAM): {ram}% 🔋",
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('• ʙᴀᴄᴋ ᴛᴏ ʀᴇᴘᴏʀᴛ', callback_data='status')]]),
         parse_mode=enums.ParseMode.HTML,
         disable_web_page_preview=True,
     )
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 #===================Donate Function===================#
 
 @Client.on_message(filters.private & filters.command(['donate']))
 async def restart(client, message):
     msg = await message.reply_text(
-        text="<i>__If you liked my service❤__.\n\nConsider and make a donation to support my developer 👦\n\n\nUPI ID - `pay-to-yash-singh@fam`</i>"
-        )
+        text="🤵 Ah, my dear young friend! If you found my services as comforting as my old rocking chair ❤️\n\n" +
+             "Consider supporting this elderly fellow's caregiver. Every little bit helps an old man keep his tech running! 👴\n\n" +
+             "My digital coin purse ID - `pay-to-yash-singh@fam`"
+    )
