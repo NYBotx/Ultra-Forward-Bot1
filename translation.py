@@ -148,8 +148,3 @@ class Translation(object):
 
 <b>ɪꜰ ᴇᴠᴇʀʏᴛʜɪɴɢ ʟᴏᴏᴋs ᴡɪsᴇ, ᴛʜᴇɴ ᴄʟɪᴄᴋ ʏᴇs</b>"""
 
-# Update channel and contact information
-UPDATE_CHANNEL = "https://t.me/Grandpa_Wisdom_Botz"
-SUPPORT_GROUP = "https://t.me/Grandpa_Support_Circle"
-DEVELOPER = "@WiseGrandpaCode"
-GITHUB = "https://github.com/grandpa-tech-wisdom# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
